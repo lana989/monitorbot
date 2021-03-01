@@ -8,7 +8,7 @@ URL = "https://search.naver.com/search.naver?where=blog&sm=tab_opt&query=민병�
 response = requests.get(URL)
 soup = BeautifulSoup(response.text, 'html.parser')
 
-bot = telegram.Bot(token ='1644533579:AAF4qmf_4R6VYZlEj3rc9R1eUux-owBk0is')
+bot = telegram.Bot(token ='1677998245:AAHnoqqsn9DWhIqhJ1AGODooOE-CS6iPKLo')
 
 def run():
 
@@ -21,4 +21,4 @@ def run():
       if '민병철' in title:
         if (Monitor.objects.filter(link__iexact=link).count() == 0):
             Monitor(title=title, link=link).save()
-            bot.sendMessage(-1001221199059, '{} {}'.format(title, link))
+            bot.sendMessage(-1001480449951, '{} {}'.format(title, link))
